@@ -1,17 +1,17 @@
-package ex.sample.service;
+package jp.co.sample.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ex.sample.repository.AdministratorRepository;
+import jp.co.sample.repository.AdministratorRepository;
+
+
 
 @Service
 @Transactional
 public class AdministratorService {
-@Autowired
+	@Autowired
 	private AdministratorRepository administratorRepository;
-
-
 
 }

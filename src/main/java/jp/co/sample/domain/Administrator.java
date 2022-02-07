@@ -1,17 +1,17 @@
-package ex.sample.domain;
+package jp.co.sample.domain;
 
 /**
  * @author 田高誠也 クラス
  */
 
 public class Administrator {
-	/**id*/
+	/** id */
 	private Integer id;
-	/**名前*/
+	/** 名前 */
 	private String name;
-	/** メールアドレス*/
+	/** メールアドレス */
 	private String mailAddress;
-	/** パスワード*/
+	/** パスワード */
 	private String password;
 
 	@Override
@@ -53,3 +53,4 @@ public class Administrator {
 	}
 
 }
+

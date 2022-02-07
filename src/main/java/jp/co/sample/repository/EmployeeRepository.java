@@ -1,4 +1,4 @@
-package ex.sample.repository;
+package jp.co.sample.repository;
 
 import java.util.List;
 
@@ -11,7 +11,9 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
-import ex.sample.domain.Employee;
+import jp.co.sample.domain.Employee;
+
+
 
 public class EmployeeRepository {
 	/** テンプレート作成 */

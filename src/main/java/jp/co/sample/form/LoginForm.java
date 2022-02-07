@@ -1,4 +1,4 @@
-package ex.sample.form;
+package jp.co.sample.form;
 
 public class LoginForm {
 
