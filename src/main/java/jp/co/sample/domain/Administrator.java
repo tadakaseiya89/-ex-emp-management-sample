@@ -5,52 +5,49 @@ package jp.co.sample.domain;
  */
 
 public class Administrator {
-	/** id */
+	/** ID */
 	private Integer id;
 	/** 名前 */
 	private String name;
 	/** メールアドレス */
-	private String mailAddress;
+	private String email;
 	/** パスワード */
-	private String password;
-
-	@Override
-	public String toString() {
-		return "Administrator [id=" + id + ", name=" + name + ", mailAddress=" + mailAddress + ", password=" + password
-				+ "]";
-	}
+	private String pass;
 
 	public Integer getId() {
 		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {
 		return name;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getMailAddress() {
-		return mailAddress;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public void setMailAddress(String mailAddress) {
-		this.mailAddress = mailAddress;
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 
-	public String getPassword() {
-		return password;
+	@Override
+	public String toString() {
+		return "Administrator [id=" + id + ", name=" + name + ", email=" + email + ", pass=" + pass + "]";
 	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 }
-
