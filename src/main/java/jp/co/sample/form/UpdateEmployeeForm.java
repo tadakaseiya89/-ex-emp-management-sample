@@ -4,7 +4,7 @@ public class UpdateEmployeeForm {
 	/** id */
 	private String id;
 	/** 扶養人数 */
-	private String dependentsCount;
+	private Integer dependentsCount;
 
 	@Override
 	public String toString() {
@@ -20,12 +20,13 @@ public class UpdateEmployeeForm {
 		this.id = id;
 	}
 
-	public String getDependentsCount() {
+	public Integer getDependentsCount() {
 		return dependentsCount;
 	}
 
-	public void setDependentsCount(String dependentsCount) {
+	public void setDependentsCount(Integer dependentsCount) {
 		this.dependentsCount = dependentsCount;
 	}
 
+	
 }

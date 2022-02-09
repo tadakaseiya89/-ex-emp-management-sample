@@ -25,8 +25,8 @@ public class EmployeeRepository {
 
 	/** RowMapper作成 */
 
-	private static final RowMapper<Employee> Employee_ROW_MAPPER = (rs,i) ->{
-		Employee employee =new Employee();
+	private static final RowMapper<Employee> Employee_ROW_MAPPER = (rs, i) -> {
+		Employee employee = new Employee();
 		employee.setId(rs.getInt("id"));
 		employee.setName(rs.getString("name"));
 		employee.setImage(rs.getString("image"));
@@ -42,7 +42,7 @@ public class EmployeeRepository {
 		return employee;
 	};
 
-	/** 従業員⼀覧情報を⼊社⽇順(降順)で取得する*/
+	/** 従業員⼀覧情報を⼊社⽇順(降順)で取得する */
 	public List<Employee> findAll() {
 		String sql = "SELECT id,name,image,gender,hire_date,mail_address,zip_code,address,telephone,salary,characteristics,dependents_count FROM employees ORDER BY hire_date DESC";
 		List<Employee> employeeList = template.query(sql, Employee_ROW_MAPPER);
@@ -52,7 +52,7 @@ public class EmployeeRepository {
 		return employeeList;
 	}
 
-	/**主キーから従業員情報を取得する*/
+	/** 主キーから従業員情報を取得する */
 	public Employee load(Integer id) {
 		String spl = "SELECT id,name,image,gender,hire_date,mail_address,zip_code,address,telephone,salary,characteristics,dependents_count FROM employees WHERE id=:id";
 		SqlParameterSource pram = new MapSqlParameterSource().addValue("id", id);
@@ -60,11 +60,11 @@ public class EmployeeRepository {
 		return employee;
 	}
 
-	/**従業員情報を変更する*/
+	/** 従業員情報を変更する */
 	public void update(Employee employee) {
 		SqlParameterSource param = new BeanPropertySqlParameterSource(employee);
 		if (employee.getId() == null) {
-			String sql = "INSERT INTO employees(id,name,image,gender,hire_date,mail_address,zip_code,address,telephone,salary,characteristics,dependents_count) VALUES (:name,:image,:gender,:hireDate,:mailAddress,:zipCode,:address,:telephone,:salary,:characteristics,:dependentsCount)";
+			String sql = "INSERT INTO employees(id,name,image,gender,hire_date,mail_address,zip_code,address,telephone,salary,characteristics,dependents_count) VALUES (:name,:image,:gender,:hire_date,:mail_address,:zip_code,:address,:telephone,:salary,:characteristics,:dependents_count)";
 			KeyHolder keyHandler = new GeneratedKeyHolder();
 			String[] keyNanber = { "id" };
 			template.update(sql, param, keyHandler, keyNanber);
@@ -72,7 +72,7 @@ public class EmployeeRepository {
 			System.out.println("idが無かったため追加しました。");
 
 		} else {
-			String sql = "UPDATE employees SET name=:name,image=:image,gender=:gender,hire_date=:hireDate,mail_address=:mailAddress,zip_code=:zipCode,address=:address,telephone=:telephone,salary=:salary,characteristics=:characteristics,dependents_count=:dependentsCount WHERE id=:id";
+			String sql = "UPDATE employees SET name=:name,image=:image,gender=:gender,hire_date=:hierDate,mail_address=:mailAddress,zip_code=:zipCode,address=:address,telephone=:telephone,salary=:salary,characteristics=:characteristics,dependents_count=:dependentsCount WHERE id=:id";
 			template.update(sql, param);
 		}
 
