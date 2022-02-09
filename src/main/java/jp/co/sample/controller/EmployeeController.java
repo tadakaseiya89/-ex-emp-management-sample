@@ -31,7 +31,7 @@ public class EmployeeController {
 	}
 
 	@RequestMapping("/showDetail")
-	public String showDetail(String id,Model model) {
+	public String showDetail(String id, Model model) {
 		model.addAttribute("employee", employeeService.showDateil(Integer.parseInt(id)));
 		return "employee/detail";
 	}

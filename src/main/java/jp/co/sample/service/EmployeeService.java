@@ -20,6 +20,7 @@ public class EmployeeService {
 		return employeeRepository.findAll();
 	}
 
+	/** 従業員情報を取得する。 */
 	public Employee showDateil(Integer id) {
 		return employeeRepository.load(id);
 	}
